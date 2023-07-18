@@ -188,7 +188,7 @@ spec:
                         description: ClusterID identifies the cluster performing authentication
                           to prevent certain replay attacks. Default master public
                           DNS name
-                        type: string
+                        type: integer
                       cpuLimit:
                         anyOf:
                         - type: integer
@@ -4820,6 +4820,11 @@ spec:
                       clusterName:
                         description: ClusterName is the name of the cluster. It is
                           only relevant when building a mesh of clusters.
+                        type: string
+                      clusterID:
+                        description: ClusterID is the ID of the cluster. It is
+                          only relevant when building a mesh of clusters.
+                          It must be a value between 1 and 255.
                         type: string
                       cniBinPath:
                         description: CniBinPath is unused.
