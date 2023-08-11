@@ -461,6 +461,7 @@ func (b *FirewallModelBuilder) addCNIRules(c *fi.CloudupModelBuilderContext, sgM
 		tcpPorts = append(tcpPorts, 4240)
 		if b.Cluster.Spec.Networking.Cilium.Hubble != nil && fi.ValueOf(b.Cluster.Spec.Networking.Cilium.Hubble.Enabled) {
 			tcpPorts = append(tcpPorts, 4244)
+			tcpPorts = append(tcpPorts, 40000)
 		}
 	}
 
